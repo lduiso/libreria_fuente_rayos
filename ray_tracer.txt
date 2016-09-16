@@ -1,6 +1,6 @@
 void __fastcall TFormEmission::CreateRays(double NumberOfRays)
 {
-//matriz das Arestas {1o ponto da aresta, 2o ponto da aresta, Posição dos pontos da aresta
+//matriz das Arestas {1o ponto da aresta, 2o ponto da aresta, PosiÃ§Ã£o dos pontos da aresta
 //  na matriz Rays}
 	int A[30][3]={{0,1,0}, {0,2,0}, {0,3,0}, {0,4,0}, {0,5,0},
                   {1,6,0}, {2,6,0}, {2,7,0}, {3,7,0}, {3,8,0},
@@ -8,7 +8,7 @@ void __fastcall TFormEmission::CreateRays(double NumberOfRays)
                   {6,11,0},{7,11,0},{8,11,0},{9,11,0},{10,11,0},
                   {1,2,0}, {2,3,0}, {3,4,0}, {4,5,0}, {5,1,0},
                   {6,7,0}, {7,8,0}, {8,9,0}, {9,10,0},{10,6,0}};
-//matriz dos triangulos {1a aresta, 2a aresta, [0] V em pé [-1] V de cabeça pra baixo}
+//matriz dos triangulos {1a aresta, 2a aresta, [0] V em pÃ© [-1] V de cabeÃ§a pra baixo}
     int T[20][3]={{0,1,0},   {1,2,0},   {2,3,0},   {3,4,0},   {4,0,0},
                   {5,6,-1},  {6,7,0},   {7,8,-1},  {8,9,0},   {9,10,-1},
                   {10,11,0}, {11,12,-1},{12,13,0}, {13,14,-1},{14,5,0},
@@ -22,8 +22,8 @@ void __fastcall TFormEmission::CreateRays(double NumberOfRays)
     NRAYS=int(2+10*pow(n,2));
     Rays=new pe_vector[NRAYS];
 //calculating the icosaedron vertives
-    S=2/sqrt(5); //distancia desde el centro del icosaedro a los vertices
-    R=(5-sqrt(5))/5;// altura de base
+    S=2/sqrt(5); 
+    R=(5-sqrt(5))/5;
     Rays[0].x=0;
     Rays[0].y=0;
     Rays[0].z=1;
