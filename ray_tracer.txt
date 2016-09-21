@@ -22,17 +22,18 @@ void __fastcall TFormEmission::CreateRays(double NumberOfRays)
     NRAYS=int(2+10*pow(n,2));
     Rays=new pe_vector[NRAYS];
 //calculating the icosaedron vertives
-    S=2/sqrt(5); 
-    R=(5-sqrt(5))/5;
+    S=2/sqrt(5); // base de la piramide pentagonal
+    R=(5-sqrt(5))/5; // altura de la piramide pentagonal
     Rays[0].x=0;
     Rays[0].y=0;
     Rays[0].z=1;
     for(i=1;i<6;i++){
-        //angulo interior
+        //calcula la ubicacion de los primeros vertices
         Rays[i].x=S*cos((PI*i*72)/180);
         Rays[i].y=S*sin((PI*i*72)/180);
         Rays[i].z=1-R;
-        //angulo exterior
+        //con el angulo complementario
+        //calcula los vertices del pentagono rotado
         Rays[i+5].x=S*cos((72*PI*i)/180+(36*PI)/180);
         Rays[i+5].y=S*sin((72*PI*i)/180+(36*PI)/180);
         Rays[i+5].z=R-1;}//fin for
@@ -43,11 +44,11 @@ void __fastcall TFormEmission::CreateRays(double NumberOfRays)
 //calculating the rays on the icosaedron edges
     for(j=0;j<30;j++){
     	A[j][2]=RAY;
-        //ubicacion con vertice 1
+        //ubicacion vertices matriz B
         xB=Rays[A[j][0]].x;
      	yB=Rays[A[j][0]].y;
      	zB=Rays[A[j][0]].z;
-        //ubicacion con vertice 2
+        //ubicacion vertices matriz C
      	xC=Rays[A[j][1]].x;
         yC=Rays[A[j][1]].y;
         zC=Rays[A[j][1]].z;
