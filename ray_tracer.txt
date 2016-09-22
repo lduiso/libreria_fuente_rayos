@@ -51,7 +51,7 @@ void __fastcall TFormEmission::CreateRays(double NumberOfRays)
      	xC=Rays[A[j][1]].x;
         yC=Rays[A[j][1]].y;
         zC=Rays[A[j][1]].z;
-
+//lewer
         c[0]=pow(xC,2)*(pow(yB,2)+pow(zB,2))+pow(yC*zB-yB*zC,2)-2*xB*xC*(yB*yC+zB*zC)+pow(xB,2)*
              (pow(yC,2)+pow(zC,2));
         c[1]=acos(xB*xC+yB*yC+zB*zC);
